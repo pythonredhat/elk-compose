@@ -36,6 +36,18 @@ services:
     depends_on:
       - es01
 
+  nginx:
+    image: nginx:1.17.4-alpine
+    container_name: nginx-kibana
+    ports:
+      - 443:443
+    networks:
+      - elastic
+    depends_on:
+      - kb01
+    volumes:
+      - /test-certs:/etc/nginx/certs
+
 networks:
   elastic:
     driver: bridge
