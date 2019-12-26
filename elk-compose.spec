@@ -1,10 +1,10 @@
-%define name elk-stack
+%define name elk-compose 
 %define version 1.0.0
 %define unmangled_version 1.0.0
 %define unmangled_version 1.0.0
 %define release 1
 
-Summary: Elk Stack 
+Summary: Elk Compose  
 Name: %{name}
 Version: %{version}
 Release: %{release}
@@ -27,14 +27,14 @@ Elk stack as docker compose file
 %setup -q
 %build 
 %install
-mkdir -p /opt/elk-compose
+mkdir -p /opt/elk-service 
 install -m 0755 -d $RPM_BUILD_ROOT/opt/elk-service
-install -m 0755 $RPM_BUILD_ROOT/opt/elk-service/docker-compose.yml
+install -m 0755 docker-compose.yml $RPM_BUILD_ROOT/opt/elk-service/docker-compose.yml
 install -m 0755 -d $RPM_BUILD_ROOT/opt/elk-service/nginx
-install -m 0755 $RPM_BUILD_ROOT/opt/elk-service/nginx/default.conf
+install -m 0755 deault.conf $RPM_BUILD_ROOT/opt/elk-service/nginx/default.conf
 
-%clean
-rm -rf %{buildroot}
+#%clean
+#rm -rf %{buildroot}
 
 %files -f INSTALLED_FILES
 %defattr(-,root,root)
