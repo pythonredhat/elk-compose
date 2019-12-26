@@ -28,10 +28,10 @@ Elk stack as docker compose file
 %build 
 %install
 mkdir -p /opt/elk-compose
-install -m 0755 -d $RPM_BUILD_ROOT/opt/elk-compose
-install -m 0755 $RPM_BUILD_ROOT/opt/elk-compose/docker-compose.yml
-install -m 0755 -d $RPM_BUILD_ROOT/opt/elk-compose/nginx
-install -m 0755 $RPM_BUILD_ROOT/opt/elk-compose/nginx/default.conf
+install -m 0755 -d $RPM_BUILD_ROOT/opt/elk-service
+install -m 0755 $RPM_BUILD_ROOT/opt/elk-service/docker-compose.yml
+install -m 0755 -d $RPM_BUILD_ROOT/opt/elk-service/nginx
+install -m 0755 $RPM_BUILD_ROOT/opt/elk-service/nginx/default.conf
 
 %clean
 rm -rf %{buildroot}

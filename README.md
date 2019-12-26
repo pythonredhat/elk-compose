@@ -12,3 +12,11 @@ https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-si
 ```bash
 https://docs.fedoraproject.org/en-US/quick-docs/creating-rpm-packages/index.html
 ```
+
+
+# Build instuctions:
+1) tar up repo
+2) place in SOURCES of rpm build tree
+3) 
+
+
