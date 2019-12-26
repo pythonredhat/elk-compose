@@ -31,10 +31,14 @@ mkdir -p /opt/elk-service
 install -m 0755 -d $RPM_BUILD_ROOT/opt/elk-service
 install -m 0755 docker-compose.yml $RPM_BUILD_ROOT/opt/elk-service/docker-compose.yml
 install -m 0755 -d $RPM_BUILD_ROOT/opt/elk-service/nginx
-install -m 0755 default.conf $RPM_BUILD_ROOT/opt/elk-service/nginx/default.conf
+install -m 0755 ./nginx/default.conf $RPM_BUILD_ROOT/opt/elk-service/nginx/default.conf
 
-#%clean
-#rm -rf %{buildroot}
+%clean
+rm -rf %{buildroot}
 
-%files -f INSTALLED_FILES
+%files
+/opt/elk-service
+/opt/elk-service/docker-compose.yml
+/opt/elk-service/nginx
+/opt/elk-service/nginx/default.conf
 %defattr(-,root,root)
