@@ -28,8 +28,8 @@ rpmdev-setuptree
 
 3) tar up source code and place in SOURCES of rpm build tree:
 ```bash
-tar czvf elk-compose.tar.gz elk-compose
-cp elk-compose.tar.gz /root/rpmbuild/SOURCES 
+tar czvf elk-compose-1.0.0.tar.gz elk-compose-1.0.0
+cp elk-compose-1.0.0.tar.gz /root/rpmbuild/SOURCES 
 ```
 
 4) copy spec file to SPECS of rpm build tree:
@@ -40,5 +40,9 @@ cp elk-compose.spec /root/rpmbuild/SPECS
 ```bash
 cd /root/rpmbuild
 rpmbuild -ba SPECS/elk-compose.spec
+```
+6) install the rpm on CentOS:
+```bash
+rpm -ivh /root/rpmbuild/RPMS/noarch/elk-compose-1.0.0-1.noarch.rpm
 ```
 
