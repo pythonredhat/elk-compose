@@ -6,7 +6,7 @@ git clone git@github.com:pythonredhat/test-certs.git
 
 2) launch containers
 ```bash
-run.sh
+./run.sh
 ```
 
 # allow nginx to connect to kibana port if you're using selinux
