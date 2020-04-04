@@ -1,3 +1,14 @@
+# build instructions (make the containers launch properly)
+1) clone test certs dir and put at /test-certs
+```bash
+git clone git@github.com:pythonredhat/test-certs.git
+```
+
+2) launch containers
+```bash
+./run.sh
+```
+
 # allow nginx to connect to kibana port if you're using selinux
 ```bash
 semanage port -a -t http_port_t -p tcp 5601
